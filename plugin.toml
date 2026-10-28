@@ -1,0 +1,30 @@
+# ASUS Aura keyboard lighting control through asusctl/asusd.
+#
+# widget  -> keyboard glyph on the bar; click opens the panel, right-click
+#            reapplies the current effect. Also reapplies after resume from sleep.
+# panel   -> pick effect, speed, direction and colours; changes apply live.
+
+id = "bloodysunset/asus_aura"
+name = "ASUS Aura"
+version = "1.0.0"
+plugin_api = 42
+author = "bloodysunset"
+license = "MIT"
+icon = "keyboard"
+description = "Pick the ASUS keyboard lighting effect from the bar, and relight it after sleep."
+tags = ["asus", "rog", "keyboard", "rgb"]
+dependencies = ["asusctl"]
+
+[[widget]]
+id = "widget"
+entry = "widget.luau"
+
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 300
+height = "content"
+max_height = 480
+placement = "attached"
+position = "auto"
+open_near_click = true
